@@ -1,0 +1,161 @@
+cmake_minimum_required(VERSION 3.5)
+
+set(PROJECT ImGuiFileDialog_Test)
+enable_language(CXX)
+project(${PROJECT} CXX)
+
+file(GLOB_RECURSE PROJECT_TEST_SRC_RECURSE 
+	${CMAKE_CURRENT_SOURCE_DIR}/*.cpp 
+	${CMAKE_CURRENT_SOURCE_DIR}/*.h 
+)
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${PROJECT_TEST_SRC_RECURSE})
+
+add_executable(${PROJECT} 
+	${PROJECT_TEST_SRC_RECURSE}
+)
+
+target_link_libraries(${PROJECT} PRIVATE
+		ImGuiFileDialog
+)
+
+set_target_properties(${PROJECT} PROPERTIES FOLDER Tests)
+
+#############################################################
+#############################################################
+#############################################################
+
+include_directories("../src")
+
+function(SetTest arg)
+  add_test("${arg}" "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT}" "${arg}")
+endfunction()
+
+## Test_IGFD_FilterManager -- Simple Filters
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_0)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_1)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_2)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_3)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_4)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_5)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_6)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_7)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_8)
+
+## Test_IGFD_FilterManager -- Collection Filters
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_0)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_1)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_2)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_3)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_4)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_5)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_6)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_7)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_8)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_9)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_10)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_11)
+
+## Test_IGFD_FilterManager -- Simple Regex Filters
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_Regex_0)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_Regex_1)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_Regex_2)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_Regex_3)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_Regex_4)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_Regex_5)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_Regex_6)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_Regex_7)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_Regex_8)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_Regex_9)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Simple_Regex_10)
+
+## Test_IGFD_FilterManager -- Collection Regex Filters
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Regex_0)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Regex_1)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Regex_2)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Regex_3)
+
+## Test_IGFD_FilterManager -- Divers Filters
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Divers_0)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Divers_1)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Divers_2)
+SetTest(Test_IGFD_FilterManager_ParseFilters_Filters_Divers_3)
+
+## Test_IGFD_FilterManager -- ReplaceExtentionWithCurrentFilter
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_0)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_1)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_2)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_3)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_4)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_5)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_6)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_7)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_8)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_9)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_10)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_11)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_12)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_13)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_14)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_15)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_16)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_17)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_18)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_19)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_20)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_21)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_22)
+SetTest(Test_IGFD_FilterManager_ReplaceExtentionWithCurrentFilterIfNeeded_23)
+
+## Test_IGFD_FilterManager -- FilterInfos -- transformAsteriskBasedFilterToRegex
+SetTest(Test_IGFD_FilterManager_FilterInfos_transformAsteriskBasedFilterToRegex_0)
+
+## Test_IGFD_FilterManager
+SetTest(Test_IGFD_FilterManager_IsCoveredByFilters_0)
+SetTest(Test_IGFD_FilterManager_IsCoveredByFilters_1)
+
+## Test_IGFD_FileManager -- Filtering ASterisk
+SetTest(Test_IGFD_FileManager_Filtering_asterisk_0)
+SetTest(Test_IGFD_FileManager_Filtering_asterisk_1)
+SetTest(Test_IGFD_FileManager_Filtering_asterisk_2)
+SetTest(Test_IGFD_FileManager_Filtering_asterisk_3)
+
+## Test_IGFD_FileManager -- Filtering Divers
+SetTest(Test_IGFD_FileManager_Filtering_divers_0)
+SetTest(Test_IGFD_FileManager_Filtering_divers_1)
+SetTest(Test_IGFD_FileManager_Filtering_divers_2)
+
+## Test_IGFD_FileManager -- Filtering Sensitive/Insenstive case
+SetTest(Test_IGFD_FileManager_Filtering_sensitive_case_0)
+SetTest(Test_IGFD_FileManager_Filtering_sensitive_case_1)
+SetTest(Test_IGFD_FileManager_Filtering_insensitive_case_0)
+SetTest(Test_IGFD_FileManager_Filtering_insensitive_case_1)
+
+## Test_IGFD_FileStyle
+##SetTest(Test_IGFD_FileStyle_ByExtention_0)
+##SetTest(Test_IGFD_FileStyle_ByExtention_1)
+##SetTest(Test_IGFD_FileStyle_ByExtention_2)
+##SetTest(Test_IGFD_FileStyle_ByExtention_3)
+##SetTest(Test_IGFD_FileStyle_ByExtention_4)
+##SetTest(Test_IGFD_FileStyle_ByExtention_5)
+
+## Test_IGFD_Utils -- ReplaceString
+SetTest(Test_IGFD_Utils_ReplaceString_0)
+SetTest(Test_IGFD_Utils_ReplaceString_1)
+SetTest(Test_IGFD_Utils_ReplaceString_2)
+SetTest(Test_IGFD_Utils_ReplaceString_3)
+SetTest(Test_IGFD_Utils_ReplaceString_4)
+SetTest(Test_IGFD_Utils_ReplaceString_5)
+SetTest(Test_IGFD_Utils_ReplaceString_6)
+SetTest(Test_IGFD_Utils_ReplaceString_7)
+
+## Test_IGFD_Utils -- SplitStringToVector delimiter char
+SetTest(Test_IGFD_Utils_SplitStringToVector_delimiter_char_0)
+SetTest(Test_IGFD_Utils_SplitStringToVector_delimiter_char_1)
+SetTest(Test_IGFD_Utils_SplitStringToVector_delimiter_char_2)
+SetTest(Test_IGFD_Utils_SplitStringToVector_delimiter_char_3)
+
+## Test_IGFD_Utils -- SplitStringToVector delimiter std::string
+SetTest(Test_IGFD_Utils_SplitStringToVector_delimiter_std_string_0)
+SetTest(Test_IGFD_Utils_SplitStringToVector_delimiter_std_string_1)
+SetTest(Test_IGFD_Utils_SplitStringToVector_delimiter_std_string_2)
+SetTest(Test_IGFD_Utils_SplitStringToVector_delimiter_std_string_3)
